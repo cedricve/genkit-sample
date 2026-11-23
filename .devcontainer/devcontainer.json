@@ -1,0 +1,26 @@
+{
+  "name": "Genkit (Go)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "1.26"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24"
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "npm install --global genkit-cli @anthropic-ai/claude-code && genkit --version && claude --version",
+  "forwardPorts": [4000],
+  "portsAttributes": {
+    "4000": {
+      "label": "Genkit Developer UI",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.Go"]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+.genkit/
+.env
+.env.*
+!.env.example
